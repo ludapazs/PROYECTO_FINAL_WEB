@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2019 a las 00:45:08
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.2
+-- Tiempo de generación: 21-11-2019 a las 00:11:22
+-- Versión del servidor: 10.4.6-MariaDB
+-- Versión de PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,30 +25,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `laptop`
+-- Estructura de tabla para la tabla `discossolidos`
 --
 
-CREATE TABLE `laptop` (
+CREATE TABLE `discossolidos` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(80) COLLATE utf8_bin NOT NULL,
-  `modelo` varchar(80) COLLATE utf8_bin NOT NULL,
-  `procesador` varchar(50) COLLATE utf8_bin NOT NULL,
-  `video` varchar(80) COLLATE utf8_bin NOT NULL,
-  `pantalla` int(11) NOT NULL,
-  `almacenamiento` int(11) NOT NULL,
-  `precio` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `placa_madre`
---
-
-CREATE TABLE `placa_madre` (
-  `id` int(11) NOT NULL,
-  `marca` varchar(50) COLLATE utf8_bin NOT NULL,
-  `modelo` varchar(100) COLLATE utf8_bin NOT NULL,
+  `marca` varchar(110) COLLATE utf8_bin NOT NULL,
+  `modelo` varchar(110) COLLATE utf8_bin NOT NULL,
+  `capacidad` varchar(110) COLLATE utf8_bin NOT NULL,
   `precio` float NOT NULL,
   `imgprincipal` varchar(300) COLLATE utf8_bin NOT NULL,
   `img2` varchar(300) COLLATE utf8_bin NOT NULL,
@@ -57,116 +41,23 @@ CREATE TABLE `placa_madre` (
   `img5` varchar(300) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `procesador`
+-- Volcado de datos para la tabla `discossolidos`
 --
 
-CREATE TABLE `procesador` (
-  `id` int(11) NOT NULL,
-  `marca` varchar(50) COLLATE utf8_bin NOT NULL,
-  `modelo` varchar(50) COLLATE utf8_bin NOT NULL,
-  `nnucleos` int(11) NOT NULL,
-  `nhilos` int(11) NOT NULL,
-  `precio` float NOT NULL,
-  `imgprincipal` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img2` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img3` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img4` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img5` varchar(300) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `ram`
---
-
-CREATE TABLE `ram` (
-  `id` int(11) NOT NULL,
-  `marca` varchar(50) COLLATE utf8_bin NOT NULL,
-  `modelo` varchar(100) COLLATE utf8_bin NOT NULL,
-  `capacidad` int(11) NOT NULL,
-  `precio` float NOT NULL,
-  `imgprincipal` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img2` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img3` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img4` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img5` varchar(300) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tarjeta_video`
---
-
-CREATE TABLE `tarjeta_video` (
-  `id` int(11) NOT NULL,
-  `marca` varchar(50) COLLATE utf8_bin NOT NULL,
-  `modelo` varchar(100) COLLATE utf8_bin NOT NULL,
-  `tipo` varchar(50) COLLATE utf8_bin NOT NULL,
-  `capacidad` int(11) NOT NULL,
-  `resolucion` varchar(50) COLLATE utf8_bin NOT NULL,
-  `precio` float NOT NULL,
-  `imgprincipal` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img2` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img3` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img4` varchar(300) COLLATE utf8_bin NOT NULL,
-  `img5` varchar(300) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuario`
---
-
-CREATE TABLE `usuario` (
-  `id` int(11) NOT NULL,
-  `usuario` varchar(50) COLLATE utf8_bin NOT NULL,
-  `password` varchar(41) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+INSERT INTO `discossolidos` (`id`, `marca`, `modelo`, `capacidad`, `precio`, `imgprincipal`, `img2`, `img3`, `img4`, `img5`) VALUES
+(1, 'HP', 'DISCO SOLIDO 2.5\" HP 120GB S700 7MM', '120 GB', 88.92, 'https://www.yamoshi.com.pe/26507-large_default/disco-solido-25-hp-120gb-s700-7mm.jpg', 'https://www.yamoshi.com.pe/26507-home_default/disco-solido-25-hp-120gb-s700-7mm.jpg', 'https://www.yamoshi.com.pe/26508-home_default/disco-solido-25-hp-120gb-s700-7mm.jpg', 'https://www.yamoshi.com.pe/26509-home_default/disco-solido-25-hp-120gb-s700-7mm.jpg', 'https://www.yamoshi.com.pe/26510-home_default/disco-solido-25-hp-120gb-s700-7mm.jpg'),
+(2, 'HP', 'DISCO SOLIDO 2.5\" HP 500GB S700 7MM', '500 GB', 215.46, 'https://www.yamoshi.com.pe/25840-large_default/disco-solido-25-hp-500gb-s700-7mm.jpg', 'https://www.yamoshi.com.pe/25618-home_default/disco-solido-25-hp-500gb-s700-7mm.jpg', 'https://www.yamoshi.com.pe/25619-home_default/disco-solido-25-hp-500gb-s700-7mm.jpg', 'https://www.yamoshi.com.pe/25840-home_default/disco-solido-25-hp-500gb-s700-7mm.jpg', 'https://www.yamoshi.com.pe/25841-home_default/disco-solido-25-hp-500gb-s700-7mm.jpg'),
+(3, 'Kingston', 'DISCO SOLIDO 2.5\" KINGSTON 960GB A400 7MM', '500GB', 429.48, 'https://www.yamoshi.com.pe/24138-large_default/disco-solido-25-kingston-960gb-a400-7mm.jpg', 'https://www.yamoshi.com.pe/23099-home_default/disco-solido-25-kingston-960gb-a400-7mm.jpg', 'https://www.yamoshi.com.pe/23100-home_default/disco-solido-25-kingston-960gb-a400-7mm.jpg', 'https://www.yamoshi.com.pe/24138-home_default/disco-solido-25-kingston-960gb-a400-7mm.jpg', 'https://www.yamoshi.com.pe/24138-home_default/disco-solido-25-kingston-960gb-a400-7mm.jpg');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `laptop`
+-- Indices de la tabla `discossolidos`
 --
-ALTER TABLE `laptop`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `placa_madre`
---
-ALTER TABLE `placa_madre`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `procesador`
---
-ALTER TABLE `procesador`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `ram`
---
-ALTER TABLE `ram`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `tarjeta_video`
---
-ALTER TABLE `tarjeta_video`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
+ALTER TABLE `discossolidos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -174,40 +65,10 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `laptop`
+-- AUTO_INCREMENT de la tabla `discossolidos`
 --
-ALTER TABLE `laptop`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `placa_madre`
---
-ALTER TABLE `placa_madre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `procesador`
---
-ALTER TABLE `procesador`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `ram`
---
-ALTER TABLE `ram`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `tarjeta_video`
---
-ALTER TABLE `tarjeta_video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `discossolidos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
