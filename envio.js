@@ -9,7 +9,7 @@ function enviar(){
         success: function( data ){
 			console.log(data);
 			if(data==1){
-				alert("Registro Correcto!");
+                console.log("Registro Correcto!");
 			}           
         },
         error: function( jqXhr, textStatus, error ){
