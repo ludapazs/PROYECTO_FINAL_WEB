@@ -2,13 +2,13 @@ function enviar(){
 	var nombre = document.getElementById("nombre").value;
     var modelo = document.getElementById("modelo").value;
     var precio = document.getElementById("precio").value;
-    var velocidad = document.getElementById("velocidad").value;
-    var aire = document.getElementById("aire").value;
-
+    var tipo = document.getElementById("tipo").value;
+    var capacidad = document.getElementById("capacidad").value;
+    var resolucion = document.getElementById("resolucion").value;
 	$.ajax({
-        url: 'registrarefrigeracion.php',
+        url: 'registrarvideo.php',
         type: 'post',
-        data: {"jsnom":nombre,"jsmdl":modelo, "jsprc":precio,"jsv":velocidad,"jsa":aire},
+        data: {"jsnom":nombre,"jsmdl":modelo,"jsc":capacidad, "jsprc":precio,"jst":tipo,"jsr":resolucion},
         success: function( data ){
 			console.log(data);
 			if(data==1){
