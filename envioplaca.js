@@ -5,9 +5,9 @@ function enviar(){
 
     
 	$.ajax({
-        url: 'registrarLaptop.php',
+        url: 'registrarplaca.php',
         type: 'post',
-        data: {"jsnom":nombre,"jsmdl":modelo, "jsprc":precio, "jsimgp":imgp, "jsimg2":img2, "jsimg3":img3, "jsimg4":img4,"jsimg5":img5},
+        data: {"jsnom":nombre,"jsmdl":modelo, "jsprc":precio},
         success: function( data ){
 			console.log(data);
 			if(data==1){
