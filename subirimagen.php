@@ -50,7 +50,7 @@ if (($nombre_imgd1 == !NULL) && ($tamanod1 <= 200000))
       // Ruta donde se guardarán las imágenes que subamos
       $directoriod1 = $_SERVER['DOCUMENT_ROOT'].'/proyecto';
       // Muevo la imagen desde el directorio temporal a nuestra ruta indicada anteriormente
-      move_uploaded_file($_FILES['imagend1']['tmp_name'],$directoriop.$nombre_imgd1);
+      move_uploaded_file($_FILES['imagend1']['tmp_name'],$directoriod1.$nombre_imgd1);
       $sql = "UPDATE placa_madre SET img2 = '$nombre_imgd1' where id = (select MAX(id) from placa_madre)";
       $resp=1;
         $cnx->query($sql) or $resp=0;
