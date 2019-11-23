@@ -16,13 +16,14 @@ if (($nombre_imgp == !NULL) && ($tamanop <= 200000))
    || ($tipop == "image/png"))
    {
       // Ruta donde se guardarán las imágenes que subamos
-      $directoriop = $_SERVER['DOCUMENT_ROOT'].'/proyecto';
+      $directoriop = 'imagenes';
       // Muevo la imagen desde el directorio temporal a nuestra ruta indicada anteriormente
-      move_uploaded_file($_FILES['imagenp']['tmp_name'],$directoriop.$nombre_imgp);
+      move_uploaded_file($_FILES['imagenp']['tmp_name'],$directoriop.'/'.$nombre_imgp);
+
       $sql = "UPDATE discosduros SET imgprincipal = '$nombre_imgp' where id = (select MAX(id) from discosduros)";
       $resp=1;
         $cnx->query($sql) or $resp=0;
-        echo "<p>Subida satisfactoria $resp</p>";
+        echo "<p>Subida satisfactoria $resp $sql</p>";
     }
     else
     {

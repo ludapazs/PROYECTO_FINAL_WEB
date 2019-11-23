@@ -16,5 +16,5 @@ if($cantreg==1) {
 	$_SESSION['usuario']=$reg->usuario;
 	header("location: index.html");
 }
-else header("location: HP.html");
+else header("location: index.html");
 ?>
