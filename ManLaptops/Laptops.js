@@ -136,10 +136,10 @@ function editar(id){
         success: function( data ){
             var datos = JSON.parse(data);
             $("#divform").modal("toggle");
-            $("#idproducto").val(datos.idproducto);
+            $("#id").val(datos.id);
             $("#txtnombre").val(datos.nombre);
-            $("#txtprecio").val(datos.precio);
-            $("#txtfecha").val(datos.fecha_vencimiento);
+            $("#txtmodelo").val(datos.modelo);
+            $("#txtprocesador").val(datos.procesador);
             $("#cbopresentacion").val(datos.idpresentacion);
             $("#cbocategoria").val(datos.idcategoria);
 
