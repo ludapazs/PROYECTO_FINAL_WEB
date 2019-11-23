@@ -140,9 +140,10 @@ function editar(id){
             $("#txtnombre").val(datos.nombre);
             $("#txtmodelo").val(datos.modelo);
             $("#txtprocesador").val(datos.procesador);
-            $("#cbopresentacion").val(datos.idpresentacion);
-            $("#cbocategoria").val(datos.idcategoria);
-
+            $("#txtvideo").val(datos.video);
+            $("#txtpantalla").val(datos.pantalla);
+            $("#txtalmacenamiento").val(datos.almacenamiento);
+            $("#txtPrecio").val(datos.precio);
             console.log(data);
         },
         error: function( jqXhr, textStatus, errorThrown ){
@@ -152,10 +153,17 @@ function editar(id){
 }
 
 function limpiar(){
-    $("#idproducto").val('');
+  
+
+    $("#divform").modal("toggle");
+    $("#id").val('');
     $("#txtnombre").val('');
-    $("#txtprecio").val('');
-    $("#txtfecha").val('');
+    $("#txtmodelo").val('');
+    $("#txtprocesador").val('');
+    $("#txtvideo").val('');
+    $("#txtpantalla").val('');
+    $("#txtalmacenamiento").val('');
+    $("#txtPrecio").val('');
 }
 
 function nuevo(){

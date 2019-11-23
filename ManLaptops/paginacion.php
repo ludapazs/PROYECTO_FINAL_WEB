@@ -1,7 +1,7 @@
 <?php
 require_once("conexion.php");
 if(isset($_POST['busca'])) $busca = $_POST['busca'];else $busca='';
-$sql="SELECT * FROM producto WHERE nombre LIKE '$busca%'";
+$sql="SELECT * FROM laptop WHERE nombre LIKE '$busca%'";
 $res = $cnx->query($sql);
 $cantreg = $res->rowCount();
 $crxp = 3; // cant de reg por página

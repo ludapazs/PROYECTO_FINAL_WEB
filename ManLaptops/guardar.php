@@ -2,12 +2,14 @@
 require_once("conexion.php");
 $nom = $_POST['jsnombre'];
 $precio = $_POST['jsprecio'];
-$fecha = $_POST['jsfecha'];
-$presentacion = $_POST['jspresentacion'];
-$categoria = $_POST['jscategoria'];
+$video = $_POST['jsv'];
+$procesador = $_POST['jsp'];
+$modelo = $_POST['jsm'];
+$pantalla = $_POST['jsp'];
+$almacenamiento = $_POST['jsa'];
 
-$sql="INSERT INTO producto (nombre, precio, fecha_vencimiento, idpresentacion, idcategoria) 
-		VALUES ('$nom','$precio','$fecha','$presentacion','$categoria')";
+$sql="INSERT INTO laptop 
+		VALUES ('$nom','$modelo','$procesador','$video','$pantalla','$almacenamiento','$precio')";
 $resp=1;
 $cnx->query($sql) or $resp=$sql;
 echo $resp;
