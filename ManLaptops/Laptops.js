@@ -1,7 +1,5 @@
 function inicio(){
 	lista(1,1);
-    lista_presentacion();
-    lista_categoria();
 }
 
 function lista(pag,orden){
@@ -23,35 +21,6 @@ function lista(pag,orden){
     paginacion();
 }
 
-function lista_presentacion(){
-    $.ajax({
-        url: 'presentacion.php',
-        dataType: 'text',
-        type: 'post',
-        data: { },
-        success: function( data ){
-            $('#cbopresentacion').html( data );
-        },
-        error: function( jqXhr, textStatus, errorThrown ){
-            console.log( errorThrown );
-        }
-    });
-}
-
-function lista_categoria(){
-    $.ajax({
-        url: 'categoria.php',
-        dataType: 'text',
-        type: 'post',
-        data: { },
-        success: function( data ){
-            $('#cbocategoria').html( data );
-        },
-        error: function( jqXhr, textStatus, errorThrown ){
-            console.log( errorThrown );
-        }
-    });
-}
 
 function eliminar(id){
     $.ajax({
