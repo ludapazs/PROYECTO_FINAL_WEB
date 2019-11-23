@@ -58,7 +58,7 @@ function guardar(){
             url: 'actualizar.php',
             dataType: 'text',
             type: 'post',
-            data: {'id': id, 'jsnombre': nom, 'jsprecio': precio, 'jsm': modelo, 'jsp':procesador, 'jsv':video ,'jsp':pantalla,'jsa':almacenamiento   },
+            data: {'id': id, 'jsnombre': nom, 'jsprecio': precio, 'jsm': modelo, 'jspro':procesador, 'jsv':video ,'jspant':pantalla,'jsa':almacenamiento   },
             success: function( data ){
                 console.log(data);
                 if(data==1){
@@ -77,7 +77,7 @@ function guardar(){
             url: 'guardar.php',
             dataType: 'text',
             type: 'post',
-            data: {'id': id, 'jsnombre': nom, 'jsprecio': precio, 'jsm': modelo, 'jsp':procesador, 'jsv':video ,'jsp':pantalla,'jsa':almacenamiento   },   
+            data: {'id': id, 'jsnombre': nom, 'jsprecio': precio, 'jsm': modelo, 'jspro':procesador, 'jsv':video ,'jspant':pantalla,'jsa':almacenamiento   },   
             success: function( data ){
                 console.log(data);
                 if(data==1){
