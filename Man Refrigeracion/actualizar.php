@@ -12,8 +12,7 @@ $img3 = $_POST['jsi3'];
 $img4 = $_POST['jsi4'];
 $img5 = $_POST['jsi5'];
 
-$sql="INSERT INTO procesador
-		VALUES (NULL, '$mar','$modelo','$nnucleos','$nhilos','$imgp','$img2','$img3','$img4','$img5')";
+$sql="UPDATE  refrigeracion SET marca = '$mar', modelo = '$modelo', precio = '$precio', velocidad = '$nucleos', flujodeaire = '$hilos',imgprincipal = '$imgp', img2 = '$img2', img3 = '$img3' , img4 = '$img4', img5 = '$img5' WHERE id = '$id'";
 $resp=1;
 $cnx->query($sql) or $resp=$sql;
 echo $resp;

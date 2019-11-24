@@ -12,7 +12,7 @@ $img3 = $_POST['jsi3'];
 $img4 = $_POST['jsi4'];
 $img5 = $_POST['jsi5'];
 
-$sql="INSERT INTO procesador
+$sql="INSERT INTO refrigeracion
 		VALUES (NULL, '$mar','$modelo','$nnucleos','$nhilos','$imgp','$img2','$img3','$img4','$img5')";
 $resp=1;
 $cnx->query($sql) or $resp=$sql;
