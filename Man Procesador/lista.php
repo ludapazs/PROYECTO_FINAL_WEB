@@ -6,14 +6,15 @@ if(isset($_POST['busca'])) $busca = $_POST['busca'];else $busca='';
 $crxp=3;
 $inicio = ($pag-1)*$crxp;
 
-$sql="SELECT * from discossolidos";
+$sql="SELECT * from procesador";
 $res = $cnx->query($sql);
 while($reg = $res->fetchObject()){
 	echo "<tr>
 			<td>$reg->id</td>
 			<td>$reg->marca</td>
 			<td>$reg->modelo</td>
-			<td>$reg->capacidad</td>
+			<td>$reg->nnucleos</td>
+			<td>$reg->nhilos</td>
 			<td>$reg->precio</td>
 			<td>$reg->imgprincipal</td>
 			<td>$reg->img2</td>	
