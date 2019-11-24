@@ -46,7 +46,6 @@ function guardar(){
     var id  = $("#id").val();
     var mar = $("#txtmarca").val();
     var modelo = $("#txtmodelo").val();
-    var corriente = $("#txtcorriente").val();
     var precio = $("#txtprecio").val();
     var imgp = $("#txtimgp").val();
     var img2 = $("#txtimg2").val();
@@ -60,7 +59,7 @@ function guardar(){
             url: 'actualizar.php',
             dataType: 'text',
             type: 'post',
-            data: {'id': id, 'jsma': mar, 'jsc': corriente, 'jsm': modelo, 'jsp':precio, 'jsim':imgp ,'jsi2':img2,'jsi3':img3,'jsi4':img4,'jsi5':img5  },
+            data: {'id': id, 'jsma': mar, 'jsm': modelo, 'jsp':precio, 'jsim':imgp ,'jsi2':img2,'jsi3':img3,'jsi4':img4,'jsi5':img5  },
             success: function( data ){
                 console.log(data);
                 if(data==1){
@@ -79,7 +78,7 @@ function guardar(){
             url: 'guardar.php',
             dataType: 'text',
             type: 'post',
-            data: {'id': id, 'jsma': mar, 'jsc': corriente, 'jsm': modelo, 'jsp':precio, 'jsim':imgp ,'jsi2':img2,'jsi3':img3,'jsi4':img4,'jsi5':img5  },   
+            data: {'id': id, 'jsma': mar, 'jsm': modelo, 'jsp':precio, 'jsim':imgp ,'jsi2':img2,'jsi3':img3,'jsi4':img4,'jsi5':img5  },   
             success: function( data ){
                 console.log(data);
                 if(data==1){
@@ -110,7 +109,6 @@ function editar(id){
             $("#id").val(datos.id);
             $("#txtmarca").val(datos.marca);
             $("#txtmodelo").val(datos.modelo);
-            $("#txtcorriente").val(datos.corrientedeentrada);
             $("#txtprecio").val(datos.precio);
             $("#txtimgp").val(datos.imgprincipal);
             $("#txtimg2").val(datos.img2);
@@ -132,7 +130,6 @@ function limpiar(){
     $("#id").val('');
     $("#txtmarca").val('');
     $("#txtmodelo").val('');
-    $("#txtcorriente").val('');
     $("#txtprecio").val('');
     $("#txtimgp").val('');
     $("#txtimg2").val('');
