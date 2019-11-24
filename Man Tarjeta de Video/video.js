@@ -47,6 +47,7 @@ function guardar(){
     var mar = $("#txtmarca").val();
     var modelo = $("#txtmodelo").val();
     var nucleos = $("#txtvelocidad").val();
+    var capacidad = $("#txtcapacidad").val();
     var hilos = $("#txtflujo").val();
     var precio = $("#txtprecio").val();
     var imgp = $("#txtimgp").val();
@@ -61,7 +62,7 @@ function guardar(){
             url: 'actualizar.php',
             dataType: 'text',
             type: 'post',
-            data: {'id': id, 'jsma': mar, 'jsn': nucleos, 'jsm': modelo,'jsh': hilos, 'jsp':precio, 'jsim':imgp ,'jsi2':img2,'jsi3':img3,'jsi4':img4,'jsi5':img5  },
+            data: {'id': id, 'jsma': mar, 'jsn': nucleos,'jsc': capacidad, 'jsm': modelo,'jsh': hilos, 'jsp':precio, 'jsim':imgp ,'jsi2':img2,'jsi3':img3,'jsi4':img4,'jsi5':img5  },
             success: function( data ){
                 console.log(data);
                 if(data==1){
@@ -80,7 +81,7 @@ function guardar(){
             url: 'guardar.php',
             dataType: 'text',
             type: 'post',
-            data: {'id': id, 'jsma': mar,'jsn': nucleos, 'jsm': modelo,'jsh': hilos, 'jsp':precio, 'jsim':imgp ,'jsi2':img2,'jsi3':img3,'jsi4':img4,'jsi5':img5  },   
+            data: {'id': id, 'jsma': mar,'jsn': nucleos, 'jsc': capacidad,'jsm': modelo,'jsh': hilos, 'jsp':precio, 'jsim':imgp ,'jsi2':img2,'jsi3':img3,'jsi4':img4,'jsi5':img5  },   
             success: function( data ){
                 console.log(data);
                 if(data==1){
@@ -111,8 +112,9 @@ function editar(id){
             $("#id").val(datos.id);
             $("#txtmarca").val(datos.marca);
             $("#txtmodelo").val(datos.modelo);
-            $("#txtvelocidad").val(datos.velocidad);
-            $("#txtflujo").val(datos.flujodeaire);
+            $("#txtvelocidad").val(datos.tipo);
+            $("#txtflujo").val(datos.resolucion);
+            $("#txtcapacidad").val(datos.capacidad);
             $("#txtprecio").val(datos.precio);
             $("#txtimgp").val(datos.imgprincipal);
             $("#txtimg2").val(datos.img2);
@@ -136,6 +138,7 @@ function limpiar(){
     $("#txtmodelo").val('');
     $("#txtvelocidad").val('');
     $("#txtflujo").val('');
+    $("#txtcapacidad").val('');
     $("#txtprecio").val('');
     $("#txtimgp").val('');
     $("#txtimg2").val('');
