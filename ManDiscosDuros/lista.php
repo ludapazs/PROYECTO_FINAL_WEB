@@ -6,7 +6,7 @@ if(isset($_POST['busca'])) $busca = $_POST['busca'];else $busca='';
 $crxp=3;
 $inicio = ($pag-1)*$crxp;
 
-$sql="SELECT * from laptop";
+$sql="SELECT * from discosduros";
 $res = $cnx->query($sql);
 while($reg = $res->fetchObject()){
 	echo "<tr>
