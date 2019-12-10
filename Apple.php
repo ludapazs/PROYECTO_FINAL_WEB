@@ -1,7 +1,7 @@
 <?php
 require_once("conexion.php");
 
-$sql = "SELECT * FROM laptop where UPPER(nombre) like UPPER('%HP%')";
+$sql = "SELECT * FROM laptop where UPPER(nombre) like UPPER('%Apple%')";
 $res = $cnx->query($sql);
 
 while($reg = $res->fetchObject()){
