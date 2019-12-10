@@ -1,20 +1,21 @@
 <?php
 require_once("conexion.php");
 $usuario = $_POST['usuario'];
-$passw 	= sha1($_POST['password']);
+$passw 	= sha1($_POST['pass']);
 
 $sql = "SELECT * FROM usuario 
 		WHERE usuario='$usuario' AND password='$passw'";
 
-$rs = $cnx->query($sql) or die($sql);
+$rs = $cnx->query($sql);
 $cantreg = $rs->rowCount();
 
 if($cantreg==1) {
-	session_start();
 	$reg = $rs->fetchObject();
-	$_SESSION['id']=$reg->id;
-	$_SESSION['usuario']=$reg->usuario;
-	header("location: index.html");
+	$datos['ok'] = 1;
+	$datos['id']=$reg->id;
+	$datos['usuario']=$reg->usuario;
 }
-else header("location: index.html");
+else $datos['ok'] = 0;
+
+echo json_encode($datos);
 ?>

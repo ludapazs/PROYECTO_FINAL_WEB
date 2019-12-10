@@ -1,22 +1,18 @@
-<?php 
-  require_once("conexion.php");
-
-  $sql = "SELECT * FROM laptop where id =".$_GET["codigo"];
-  $res = $cnx->query($sql);
-  $reg = $res->fetchObject();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="estilos.css">
     <script src="funciones.js"></script>
-    <script src="carrito.js"></script>
+    <script src="carrito2.js"></script>
+    <!-- <script type="text/javascript">
+      window.onload = inicio();
+    </script> -->
     <title>CompuTronik</title>
 </head>
 <body class="d-flex flex-column">
@@ -46,81 +42,28 @@
     </div>
 
   </nav>
- 
-  <div class="row"></div>
-<div class="container">
+  <div class="container">
+    <h3>Cliente: <span id="spnombres"></span></h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>N&ordm;</th>
+                <th>Usuario</th>
+                <th>Laptop</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="tbl">
+            
+        </tbody>
+    </table>
+    <button id="Confirmar" class="btn btn-primary float-right">Confirmar Pedido</button>
+</div>
+<div id="output"></div>
 
-        <!-- Portfolio Item Heading -->
-        <h1 class="my-4"><?php echo $reg->nombre;?>
-
-        </h1>
-
-        <!-- Portfolio Item Row -->
-        <div class="row">
-
-          <div class="col-md-8">
-            <img class="img-fluid" src="imagenes/<?php echo $reg->imgprincipal;?>" alt="">
-          </div>
-
-          <div class="col-md-4">
-
-            <h3 class="my-3">Caracteristicas:</h3>
-            <ul>
-
-    <li>Modelo: <?php echo $reg->modelo;?></li>
-    <li>Procesador: <?php echo $reg->procesador;?></li>
-    <li>Modelo tarjeta de video: <?php echo $reg->video;?></li>
-    <li>Tamaño de la pantalla: <?php echo $reg->pantalla;?></li>
-    <li>Almacenamiento: <?php echo $reg->almacenamiento;?></li>
-    <p class="precio">S/<?php echo $reg->precio;?></p>
-    <label for="txtcantidad">Cantidad:</label>
-    <input type="number" name="txtcantidad" id="txtcantidad" class="form-control mb-4">
-    <a class="btn btn-primary" onclick="agregar(<?php echo $reg->id.','.$reg->precio;?>)">Agregar a carrito</a>
-
-            </ul>
-          </div>
-
-        </div>
-        <!-- /.row -->
-
-        <!-- Related Projects Row -->
-
-        <div class="row">
-
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                  <img class="img-fluid" src="imagenes/<?php echo $reg->img2;?>" alt="">
-                </a>
-          </div>
-
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                  <img class="img-fluid" src="imagenes/<?php echo $reg->img3;?>" alt="">
-                </a>
-          </div>
-
-          <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                  <img class="img-fluid" src="imagenes/<?php echo $reg->img4;?>" alt="">
-                </a>
-          </div>
-          <div class="col-md-3 col-sm-6 mb-4">
-              <a href="#">
-                    <img class="img-fluid" src="imagenes/<?php echo $reg->img5;?>" alt="">
-                  </a>
-            </div>
-
-
-        </div>
-        <!-- /.row -->
-
-
-
-
-
-      </div>
-      <!-- /.container -->
-              <!-- Footer -->
+  <!-- Footer -->
   <footer class="bg-dark">
     <div class="container py-3">
       <div class="row py-4">
@@ -160,5 +103,11 @@
     </div>
   </footer>
   <!-- End -->
+    </div>
 </body>
+<script type="text/javascript">
+	$("#spnombres").html(sessionStorage.getItem("nombres"));
+</script>
 </html>
+
+
