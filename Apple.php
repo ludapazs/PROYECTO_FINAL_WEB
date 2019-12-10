@@ -6,9 +6,10 @@ $res = $cnx->query($sql);
 
 while($reg = $res->fetchObject()){
     $ruta = $reg->imgprincipal;
+    $codprod = $reg->id;
     echo "<div class='row'>
         <div class='col-md-4'>
-            <a href='HPdetalle.html'>
+        <a href='LaptopDetalle.php?codigo=$codprod'>
                 <img class='img-fluid rounded mb-3 mb-md-0'
                     src='imagenes/$ruta'
                     alt=''>

@@ -1,3 +1,10 @@
+<?php 
+  require_once("conexion.php");
+
+  $sql = "SELECT * FROM laptop where id =".$_GET["codigo"];
+  $res = $cnx->query($sql);
+  $reg = $res->fetchObject();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +50,7 @@
 <div class="container">
 
         <!-- Portfolio Item Heading -->
-        <h1 class="my-4">Laptop 2en1 14" Core i5 8va Gen 4GB RAM 256GB SSD - Pantalla Touch Full HD
+        <h1 class="my-4"><?php echo $reg->nombre;?>
 
         </h1>
 
@@ -51,7 +58,7 @@
         <div class="row">
 
           <div class="col-md-8">
-            <img class="img-fluid" src="https://www.yamoshi.com.pe/26106-large_default/laptop-i5-hp-14-ck0011la-4gb-1tb-14-w10.jpg" alt="">
+            <img class="img-fluid" src="imagenes/<?php echo $reg->imgprincipal;?>" alt="">
           </div>
 
           <div class="col-md-4">
@@ -59,14 +66,14 @@
             <h3 class="my-3">Caracteristicas:</h3>
             <ul>
 
-    <li>Modelo: HP Pavilion x360 14-dh0001la Intel Core i5-8265U 4GB 256GB SSD 14,0"</li>
-    <li>Tipo: Notebooks</li>
-    <li>Procesador: Intel Core i5</li>
-    <li>Modelo tarjeta de video: Intel uHD 620</li>
-    <li>Tamaño de la pantalla: 14,0</li>
-    <p class="preciod">$456</p>
-    <p class="precio">S/1899</p>
-    <p>Cantidad: <input type="number" name="cantidad"></p>
+    <li>Modelo: <?php echo $reg->modelo;?></li>
+    <li>Procesador: <?php echo $reg->procesador;?></li>
+    <li>Modelo tarjeta de video: <?php echo $reg->video;?></li>
+    <li>Tamaño de la pantalla: <?php echo $reg->pantalla;?></li>
+    <li>Almacenamiento: <?php echo $reg->almacenamiento;?></li>
+    <p class="precio">S/<?php echo $reg->precio;?></p>
+    <label for="txtcantidad">Cantidad:</label>
+    <input type="number" name="txtcantidad" id="txtcantidad" class="form-control mb-4">
     <a class="btn btn-primary" href="">Agregar a carrito</a>
 
             </ul>
@@ -76,30 +83,29 @@
         <!-- /.row -->
 
         <!-- Related Projects Row -->
-        <h3 class="my-4"></h3>
 
         <div class="row">
 
           <div class="col-md-3 col-sm-6 mb-4">
             <a href="#">
-                  <img class="img-fluid" src="https://www.yamoshi.com.pe/26106-home_default/laptop-i5-hp-14-ck0011la-4gb-1tb-14-w10.jpg" alt="">
+                  <img class="img-fluid" src="imagenes/<?php echo $reg->img2;?>" alt="">
                 </a>
           </div>
 
           <div class="col-md-3 col-sm-6 mb-4">
             <a href="#">
-                  <img class="img-fluid" src="https://www.yamoshi.com.pe/26102-home_default/laptop-i5-hp-14-ck0011la-4gb-1tb-14-w10.jpg " alt="">
+                  <img class="img-fluid" src="imagenes/<?php echo $reg->img3;?>" alt="">
                 </a>
           </div>
 
           <div class="col-md-3 col-sm-6 mb-4">
             <a href="#">
-                  <img class="img-fluid" src="https://www.yamoshi.com.pe/26103-home_default/laptop-i5-hp-14-ck0011la-4gb-1tb-14-w10.jpg" alt="">
+                  <img class="img-fluid" src="imagenes/<?php echo $reg->img4;?>" alt="">
                 </a>
           </div>
           <div class="col-md-3 col-sm-6 mb-4">
               <a href="#">
-                    <img class="img-fluid" src="https://www.yamoshi.com.pe/26104-home_default/laptop-i5-hp-14-ck0011la-4gb-1tb-14-w10.jpg" alt="">
+                    <img class="img-fluid" src="imagenes/<?php echo $reg->img5;?>" alt="">
                   </a>
             </div>
 
