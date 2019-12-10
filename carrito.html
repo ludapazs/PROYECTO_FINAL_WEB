@@ -7,6 +7,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://checkout.culqi.com/js/v3"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <link rel="stylesheet" href="estilos.css">
     <script src="funciones.js"></script>
     <script src="carrito2.js"></script>
@@ -92,6 +94,7 @@
             <li class="mb-2"><a href="#" class="text-muted">Subastas</a></li>
           </ul>
         </div>
+        
       </div>
     </div>
 
@@ -107,6 +110,59 @@
 </body>
 <script type="text/javascript">
 	$("#spnombres").html(sessionStorage.getItem("nombres"));
+</script>
+<script>
+      
+  Culqi.publicKey = 'pk_test_tAC1psF9nP5BtX9V';
+
+  
+var descripcion = "";
+var precio = "";
+
+$('#Confirmar').on('click', function(e) {
+// Abre el formulario con la configuración en Culqi.settings
+
+descripcion = "Compra "+ $("#spnombres").val();
+precio = $("#total").val();
+
+Culqi.settings({
+title: descripcion,
+currency: 'PEN',
+description: 'Laptop CompuTronik',
+amount: precio
+});
+
+Culqi.open();
+e.preventDefault();
+});
+
+function culqi() {
+    if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+        var token = Culqi.token.id;
+
+        var email = Culqi.token.email;
+        //En esta linea de codigo debemos enviar el "Culqi.token.id"
+        //hacia tu servidor con Ajax
+        var data = {descripcion:descripcion,precio:precio,token:token,email:email};
+        var url = "proceso.php";
+
+        $.post(url,data,function(res){
+            alert(res);
+            console.log(data);
+            localStorage.clear();
+            window.location('index.html');
+        });
+            
+        
+
+    } else { // ¡Hubo algún problema!
+        // Mostramos JSON de objeto error en consola
+        console.log(Culqi.error);
+        console.log(data);
+        alert(Culqi.error.user_message);
+}
+};
+
 </script>
 </html>
 
