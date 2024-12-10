@@ -1,0 +1,158 @@
+body {
+  background: #e8cbc0;
+  background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+  background: linear-gradient(to right, #e8cbc0, #636fa4);
+  min-height: 100vh;
+}
+
+.social-link {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.social-link:hover, .social-link:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+p.precio{
+  color: red;
+ font-size: 45px;
+ margin:0px;
+}
+p.preciod{
+  color: blue;
+  font-size: 40px;
+  margin: 0px;
+
+}
+code {
+  background: #fff;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  margin: 0 0.3rem;
+}
+
+  
+  #button-addon1 {
+    color: #ffc371;
+  }
+  
+  
+  .form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  .form-control.shadow-0:focus {
+    box-shadow: none;
+  }
+
+  .vertical-nav {
+    min-width: 17rem;
+    width: 17rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+  }
+  
+  .page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+  }
+  
+  /* for toggle behavior */
+  
+  #sidebar.active {
+    margin-left: -17rem;
+  }
+  
+  #content.active {
+    width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -17rem;
+    }
+    #sidebar.active {
+      margin-left: 0;
+    }
+    #content {
+      width: 100%;
+      margin: 0;
+    }
+    #content.active {
+      margin-left: 17rem;
+      width: calc(100% - 17rem);
+    }
+  }
+
+  
+
+  #carrusel {
+    float:left;
+    width:600px;
+    overflow:hidden;
+    height:203px;
+    position:relative;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+ 
+#carrusel .left-arrow {
+    position:absolute;
+    left:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+#carrusel .right-arrow {
+    position:absolute;
+    right:10px;
+    z-index:1;
+    top:50%;
+    margin-top:-9px;
+}
+ 
+.carrusel {
+    width:4000px;
+    left:0px;
+    position:absolute;
+    z-index:0;
+}
+ 
+.carrusel>div {
+    float: left;
+    height: 203px;
+    margin-right: 5px;
+    width: 195px;
+    text-align:center;
+}
+ 
+.carrusel img {
+    cursor:pointer;
+}
+ 
+.product {
+    border:#CCCCCC 1px solid;
+}
+
+
+
+

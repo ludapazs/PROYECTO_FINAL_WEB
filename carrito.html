@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://checkout.culqi.com/js/v3"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="estilos.css">
+    <script src="funciones.js"></script>
+    <script src="carrito2.js"></script>
+    <!-- <script type="text/javascript">
+      window.onload = inicio();
+    </script> -->
+    <title>CompuTronik</title>
+</head>
+<body class="d-flex flex-column">
+    <!-- NAVBAR-->
+<nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <!-- Logo Image -->
+        <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+        <!-- Logo Text -->
+        <span class="text-uppercase font-weight-bold">CompuTronik</span>
+      </a>
+
+      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link">Inicio<span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a href="menulaptops.html" class="nav-link">Computadoras</a></li>
+          <li class="nav-item"><a href="menupartes.html" class="nav-link">Piezas</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Subastas</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">Sobre Nosotros</a></li>
+          <li class="nav-item"><a href="iniciarsesion.html" class="nav-link">Iniciar Sesión</a></li>
+          <li class="nav-item"><a href="registrase.html" class="nav-link">Crear cuenta</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+  <div class="container my-5">
+    <h3>Cliente: <span id="spnombres"></span></h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>N&ordm;</th>
+                <th>Usuario</th>
+                <th>Laptop</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="tbl">
+            
+        </tbody>
+    </table>
+    <button id="Confirmar" class="btn btn-primary float-right">Confirmar Pedido</button>
+</div>
+<div id="output"></div>
+
+  <!-- Footer -->
+  <footer class="bg-dark">
+    <div class="container py-3">
+      <div class="row py-4">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><!-- <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" alt="" width="45" class="mb-3"> -->
+            <!-- <h6 class="text-uppercase font-weight-bold mb-4">Sobre Nosotros</h6> -->
+          <p class="font-italic text-muted"> <b class="text-white">CompuTronik®</b> <br> <br> Somos una empresa comprometida con entregarte productos de calidad y que se acomoden a tus necesidades.</p>
+          <ul class="list-inline mt-4">
+            <li class="list-inline-item"><a href="https://twitter.com/" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4 text-white">Contáctanos</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2 text-muted"><i class="fa fa-phone"></i> 987654321</li>
+            <li class="mb-2 text-muted"><i class="fa fa-envelope"></i> computronik@gmail.com</li>
+            <!-- <li class="mb-2"><a href="#" class="text-muted">Stores</a></li> -->
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4 text-white">Navega por nuestra página</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted">Computadoras</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Piezas</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Subastas</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Copyrights -->
+    <div class="bg-secondary py-3">
+      <div class="container text-center">
+        <p class="text-black mb-0 py-2">© CompuTronik All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End -->
+    </div>
+</body>
+<script type="text/javascript">
+	$("#spnombres").html(sessionStorage.getItem("nombres"));
+</script>
+<script>
+      
+  Culqi.publicKey = 'pk_test_tAC1psF9nP5BtX9V';
+
+  
+var descripcion = "";
+var precio = "";
+
+$('#Confirmar').on('click', function(e) {
+// Abre el formulario con la configuración en Culqi.settings
+
+descripcion = "Compra "+ $("#spnombres").val();
+precio = $("#total").val();
+
+Culqi.settings({
+title: descripcion,
+currency: 'PEN',
+description: 'Laptop CompuTronik',
+amount: precio
+});
+
+Culqi.open();
+e.preventDefault();
+});
+
+function culqi() {
+    if (Culqi.token) { // ¡Objeto Token creado exitosamente!
+        var token = Culqi.token.id;
+
+        var email = Culqi.token.email;
+        //En esta linea de codigo debemos enviar el "Culqi.token.id"
+        //hacia tu servidor con Ajax
+        var data = {descripcion:descripcion,precio:precio,token:token,email:email};
+        var url = "proceso.php";
+
+        $.post(url,data,function(res){
+            alert(res);
+            console.log(data);
+            localStorage.clear();
+            window.location('index.html');
+        });
+            
+        
+
+    } else { // ¡Hubo algún problema!
+        // Mostramos JSON de objeto error en consola
+        console.log(Culqi.error);
+        console.log(data);
+        alert(Culqi.error.user_message);
+}
+};
+
+</script>
+</html>
+
+

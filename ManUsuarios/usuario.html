@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>:Usuarios:</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="usuario.js"></script>
+	<script type="text/javascript">
+		window.onload = inicio();
+	</script>
+</head>
+<body>
+<div class="container">
+	<h1>Usuarios</h1>
+	<div id="divmenu">
+		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#divform" onclick="limpiar()">Nuevo</button>
+	</div>
+
+	<div class="modal fade" id="divform" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Producto</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <form>
+	        	<div class="form-group">
+	        		<input type="hidden" name="id" id="id" value="">
+				    <label for="txtnombre">Usuario</label>
+				    <input type="text" class="form-control" name="txtnombre" id="txtnombre">
+				  </div>
+				  <div class="form-group">
+				    <label for="txtmodelo">Password</label>
+				    <input type="text" name='txtpassword' class="form-control" id="txtpassword" value="1.00">
+				  </div>
+                  
+	        </form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+	        <button type="button" class="btn btn-primary" onclick="guardar()">Guardar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="" id="divmsg">
+		
+	</div>
+	<br>
+	<div id="divbuscar" class="form-group">
+		<input type="text" name="txtbusca" id="txtbusca" class="form-control" placeholder="escribe aqu&iacute; para buscar un producto" onkeyup="buscar()">
+	</div>
+	<div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th><a href='#' onclick='ordenar(1)'>Id</a></th>
+					<th><a href='#' onclick='ordenar(2)'>Usuario</a></th>
+					<th><a href='#' onclick='ordenar(3)'>Password</a></th>
+				</tr>
+			</thead>
+			<tbody id="divregistros">
+				
+			</tbody>
+		</table>
+		<table>
+			<tr id="paginacion">
+
+			</tr>
+		</table>
+	</div>
+</div>
+</body>
+</html>
